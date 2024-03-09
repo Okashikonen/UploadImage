@@ -1,0 +1,66 @@
+
+<!-- This is the header section of the web page -->
+<header>
+  <div class="header">
+    <h1>API Upload Image </h1>
+    <img src="../assets/images/imgbb.png" alt="icono imgBB">
+  </div>
+</header>
+
+<!-- This is the body section of the web page -->
+<body>
+  <div class="contenedor">
+    <div class="row">
+      <div>
+        <div class="descripcion">
+          <h2>Sube tu imagen</h2>
+          <p>Registrese y obtenga su API Key en: <a href="https://api.imgbb.com/">https://api.imgbb.com/</a></p>
+        </div>
+        <form>
+          <div class="form-group">
+            <div class="col-md-12 ">
+              <div class="input-group">
+                <!-- Input field for entering the API Key -->
+                <input [type]="showApiKey ? 'text' : 'password'" (input)="onApiKeyInput($event)" id="apiKey" class="form-control" placeholder="Ingrese la API Key" aria-describedby="apiKey" accept="image/*">
+                <!-- Button to toggle the visibility of the API Key -->
+                <button type="button" class="btn btn-primary" style="border-top-right-radius: 5px; border-bottom-right-radius: 5px;" (click)="toggleShowApiKey()">{{ showApiKey ? 'Ocultar' : 'Mostrar' }} API Key</button>
+              </div>
+            </div>
+            <br>
+            <div class="input-group">
+              <!-- Input field for selecting an image file -->
+              <input type="file" class="form-control" id="inputGroupFile04" (change)="onInput($event)" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              <!-- Button to upload the selected image -->
+              <button class="btn btn-primary" type="button" id="inputGroupFileAddon04" (click)="uploadSelectedImage()">Subir imagen</button>
+            </div>
+            <br>
+            <!-- Conditional rendering of the image URL if it is not empty -->
+            @if (imageUrl !== '') {
+              <p>URL de la imagen: <a href="{{ imageUrl }}"  target="_blank" rel="noopener">click aqui para ver</a></p>
+            }
+            <br>
+            <div class="col-md-12 "  style="margin-bottom: 30px;">
+              <div class="card">
+                <div class="card-body">
+                  <!-- Displaying the selected image -->
+                  <img src="{{image}}" alt="" style="object-fit: contain; width: 100%; max-width: 500px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="footer">
+    <span>© 2024 Juan Sebastian Mejia Suaza</span>
+  </div>
+  <span> - </span>
+  <span>My Portfolio <a href="https://portfolio-sebastianmejia.netlify.app/" target="_blank" rel="noopener">https://portfolio-sebastianmejia.netlify.app/</a></span>
+</footer>
+
+<!-- This is the router outlet for rendering different components based on the current route -->
+<router-outlet />

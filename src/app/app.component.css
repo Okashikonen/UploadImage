@@ -1,0 +1,35 @@
+body{
+    background-color: #1d1546;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    min-height: 84.5vh;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #140F2D;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #140F2D;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
